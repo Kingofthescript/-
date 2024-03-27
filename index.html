@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yads Website</title>
+    <style>
+        body {
+            background-color: pink;
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Cute professional font */
+            text-align: center;
+        }
+        h1 {
+            color: #333; /* Dark color for better contrast */
+        }
+        .hidden {
+            display: none;
+        }
+        .button {
+            background-color: #ffcccc; /* Light pink */
+            border: none;
+            color: #333; /* Dark color for better contrast */
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 12px;
+            outline: none;
+        }
+        .button:hover {
+            background-color: #ffb3b3; /* Lighter pink on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Yads Little Website</h1>
+    <button class="button" onclick="toggleFlowerText()">Click For A Flower!</button>
+    <p id="flowerText" class="hidden">Tulips Of Course 🌷🌷 :D!</p>
+    <button class="button" onclick="toggleBirthdayText()">My Birthday 🎂</button>
+    <p id="birthdayText" class="hidden">Did You Forget About My Birthday 😡Its 30th Of April DUHH<br>ill let it slide this time!</p>
+    <button class="button" onclick="toggleJokeText()">Why was the tulip so good at sports?</button>
+    <p id="jokeText" class="hidden">Because it had a great stem-ina! 🌷😄</p>
+    <button class="button" onclick="playNasheed()">Favorite Nasheed! 🔥🌷</button>
+    <audio id="nasheedAudio" class="hidden">
+        <source src="wedding.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        function toggleFlowerText() {
+            var text = document.getElementById("flowerText");
+            var button = document.querySelector('.button');
+            if (text.classList.contains('hidden')) {
+                text.classList.remove('hidden');
+                text.style.display = "block";
+                button.innerHTML = "Close";
+            } else {
+                text.classList.add('hidden');
+                text.style.display = "none";
+                button.innerHTML = "Click For A Flower!";
+            }
+        }
+
+        function toggleBirthdayText() {
+            var text = document.getElementById("birthdayText");
+            var button = document.querySelectorAll('.button')[1];
+            if (text.classList.contains('hidden')) {
+                text.classList.remove('hidden');
+                text.style.display = "block";
+                button.innerHTML = "Close";
+            } else {
+                text.classList.add('hidden');
+                text.style.display = "none";
+                button.innerHTML = "My Birthday 🎂";
+            }
+        }
+
+        function toggleJokeText() {
+            var text = document.getElementById("jokeText");
+            var button = document.querySelectorAll('.button')[2];
+            if (text.classList.contains('hidden')) {
+                text.classList.remove('hidden');
+                text.style.display = "block";
+                button.innerHTML = "Close";
+            } else {
+                text.classList.add('hidden');
+                text.style.display = "none";
+                button.innerHTML = "Why was the tulip so good at sports?";
+            }
+        }
+
+        function playNasheed() {
+            var audio = document.getElementById("nasheedAudio");
+            audio.play();
+        }
+    </script>
+</body>
+</html>
+
+
